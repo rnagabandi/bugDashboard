@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<suite name="BugZilla Report" parallel="tests" thread-count="1">
+
+	<listeners>
+		<listener class-name="com.spire.base.reporter.SpireReport" />
+		<listener class-name="com.spire.base.controller.TestRetryListener" />
+		<listener class-name="com.spire.base.reporter.SpireEmailReport" />
+	</listeners>
+
+	<parameter name="healthCheck" value="false" />
+	<parameter name="emailToList" value="garima.tuwani@spire2grow.com" />
+	<parameter name="productName" value="Match-Allocate" />
+	<parameter name="priority" value="Bug" />
+	
+	
+	<test name="bugzilla test">
+		<groups>
+
+			<run>
+				<include name="sendEmailMatch" />
+
+			</run>
+
+		</groups>
+
+		<packages>
+			<package name="com.spire.test" />
+		</packages>
+	</test>
+
+
+</suite>               
+        
+   
